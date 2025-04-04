@@ -36,29 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Form submission
-  const contactForm = document.getElementById("contact-form")
+  const contactForm = document.getElementById("contact-form");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-
-      // In a real implementation, you would send the form data to a server
-      // For GitHub Pages, you might use a service like Formspree
-
-      // Simple validation
-      const name = document.getElementById("name").value
-      const email = document.getElementById("email").value
-      const message = document.getElementById("message").value
-
-      if (name && email && message) {
-        alert(
-          "Merci pour votre message ! Dans un environnement de production, ce formulaire enverrait vos informations à un serveur.",
-        )
-        contactForm.reset()
-      } else {
-        alert("Veuillez remplir tous les champs du formulaire.")
-      }
-    })
+    contactForm.addEventListener("submit", () => {
+      alert("Merci pour votre message !");
+    });
   }
 })
 
