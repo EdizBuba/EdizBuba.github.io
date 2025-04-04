@@ -218,7 +218,7 @@
                 </p>
               </div>
               <div class="card-body">
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mzzejkye" method="POST">
+                <form class="contact-form" id="contact-form">
                   <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" id="name" name="name" placeholder="Votre nom" required>
@@ -233,7 +233,9 @@
                   </div>
                   <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
                 </form>
-                
+                <div id="form-success" class="form-success hidden">
+                  <i class="fas fa-check-circle"></i> Message envoyé avec succès !
+                </div>                
               </div>
             </div>
           </div>
