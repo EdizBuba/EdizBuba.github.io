@@ -1,7 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Ediz Buba</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">Portfolio</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">À propos</a></li>
+          <li><a href="#projects" class="nav-link">Projets</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">Ediz Buba</h1>
+            <p class="hero-subtitle">Développeur logiciel</p>
+            <p class="hero-description">
+              Passionné par le développement et les nouvelles technologies, je crée des applications.
+            </p>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">Voir mes projets <i class="fas fa-arrow-right"></i></a>
+              <a href="#contact" class="btn btn-outline">Me contacter</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="https://via.placeholder.com/400" alt="Photo de profil" class="profile-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">À propos de moi</h2>
+          <p class="section-subtitle">
+            Découvrez mon parcours, mes compétences et ma passion pour le développement web.
+          </p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3 class="about-subtitle">Mon parcours</h3>
+            <p>
+              Diplômé en informatique, j'ai développé une expertise en développement. Mon parcours académique m'a permis d'acquérir de solides connaissances théoriques, tandis que mes expériences professionnelles m'ont offert l'opportunité de les mettre en pratique sur des projets concrets.
+            </p>
+            <p>
+              Je suis constamment à la recherche de nouvelles technologies et méthodologies pour améliorer mes compétences et rester à la pointe de l'innovation dans le domaine du développement web.
+            </p>
+          </div>
+          <div class="skills">
+            <h3 class="about-subtitle">Mes compétences</h3>
+            <div class="tabs">
+              <div class="tabs-header">
+                <button class="tab-btn active" data-tab="frontend">Frontend</button>
+                <button class="tab-btn" data-tab="backend">Backend</button>
+                <button class="tab-btn" data-tab="tools">Outils</button>
+              </div>
+              <div class="tabs-content">
+                <div class="tab-pane active" id="frontend">
+                  <div class="skills-grid">
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">TypeScript</div>
+                    <div class="skill-item">HTML/CSS</div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="backend">
+                  <div class="skills-grid">
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">Express</div>
+                    <div class="skill-item">MongoDB</div>
+                    <div class="skill-item">PostgreSQL</div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tools">
+                  <div class="skills-grid">
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">Figma</div>
+                    <div class="skill-item">VS Code</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Mes projets</h2>
+          <p class="section-subtitle">
+            Découvrez une sélection de mes projets les plus récents et les plus significatifs.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400" alt="Capture d'écran du projet E-commerce">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Plateforme E-commerce</h3>
+              <p class="project-description">
+                Une plateforme e-commerce complète avec panier d'achat, paiement en ligne et gestion des commandes.
+              </p>
+              <div class="project-footer">
+                <a href="projects/ecommerce.html" class="btn btn-sm btn-outline">Détails</a>
+                <a href="https://github.com/username/ecommerce" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400" alt="Capture d'écran de l'application de gestion de tâches">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Application de gestion de tâches</h3>
+              <p class="project-description">
+                Une application web permettant de gérer ses tâches quotidiennes avec des fonctionnalités de collaboration.
+              </p>
+              <div class="project-footer">
+                <a href="projects/task-manager.html" class="btn btn-sm btn-outline">Détails</a>
+                <a href="https://github.com/username/task-manager" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400" alt="Capture d'écran du blog personnel">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Blog personnel</h3>
+              <p class="project-description">
+                Un blog personnel développé avec HTML, CSS et JavaScript pour partager mes connaissances et expériences.
+              </p>
+              <div class="project-footer">
+                <a href="projects/blog.html" class="btn btn-sm btn-outline">Détails</a>
+                <a href="https://github.com/username/blog" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400" alt="Capture d'écran de l'application météo">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Application météo</h3>
+              <p class="project-description">
+                Une application météo utilisant des API externes pour fournir des prévisions météorologiques précises et personnalisées.
+              </p>
+              <div class="project-footer">
+                <a href="projects/weather-app.html" class="btn btn-sm btn-outline">Détails</a>
+                <a href="https://github.com/username/weather-app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Me contacter</h2>
+          <p class="section-subtitle">
+            Vous avez un projet en tête ou une opportunité à me proposer ? N'hésitez pas à me contacter !
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>ediz.buba@example.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">github.com/username</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-file-alt"></i>
+              <a href="#">Télécharger mon CV</a>
+            </div>
+          </div>
+          <div class="contact-form-container">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Envoyez-moi un message</h3>
+                <p class="card-subtitle">
+                  Remplissez le formulaire ci-dessous pour me contacter directement.
+                </p>
+              </div>
+              <div class="card-body">
+                <form class="contact-form" id="contact-form">
+                  <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright">© 2025 Ediz Buba. Tous droits réservés.</p>
+      <div class="social-links">
+        <a href="https://github.com/EdizBuba" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
+
