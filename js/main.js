@@ -1,45 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const tabPanes = document.querySelectorAll(".tab-pane");
+  const tabButtons = document.querySelectorAll(".tab-btn")
+  const tabPanes = document.querySelectorAll(".tab-pane")
 
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      tabButtons.forEach((btn) => btn.classList.remove("active"));
-      tabPanes.forEach((pane) => pane.classList.remove("active"));
+      tabButtons.forEach((btn) => btn.classList.remove("active"))
+      tabPanes.forEach((pane) => pane.classList.remove("active"))
 
-      button.classList.add("active");
+      button.classList.add("active")
 
-      const tabId = button.getAttribute("data-tab");
-      document.getElementById(tabId).classList.add("active");
-    });
-  });
+      const tabId = button.getAttribute("data-tab")
+      document.getElementById(tabId).classList.add("active")
+    })
+  })
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+      e.preventDefault()
 
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
+      const targetId = this.getAttribute("href")
+      if (targetId === "#") return
 
-      const targetElement = document.querySelector(targetId);
+      const targetElement = document.querySelector(targetId)
       if (targetElement) {
         window.scrollTo({
           top: targetElement.offsetTop - 80,
           behavior: "smooth",
-        });
+        })
       }
-    });
-  });
+    })
+  })
 
   // Form
-  const contactForm = document.getElementById("contact-form");
-  const successMessage = document.getElementById("form-success");
+  const contactForm = document.getElementById("contact-form")
+  const successMessage = document.getElementById("form-success")
 
   if (contactForm) {
-    contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    // S'assurer que le message de succès est caché au chargement
+    if (successMessage) {
+      successMessage.classList.add("hidden")
+      successMessage.classList.remove("show")
+    }
 
-      const formData = new FormData(contactForm);
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault()
+
+      const formData = new FormData(contactForm)
 
       try {
         const response = await fetch("https://formspree.io/f/mzzejkye", {
@@ -48,25 +54,30 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: {
             Accept: "application/json",
           },
-        });
+        })
 
         if (response.ok && successMessage) {
-          successMessage.classList.remove("hidden");
-          successMessage.classList.add("show");
+          // Afficher le message de succès
+          successMessage.classList.remove("hidden")
+          successMessage.classList.add("show")
 
+          // Cacher le message après 4 secondes
           setTimeout(() => {
-            successMessage.classList.remove("show");
-            successMessage.classList.add("hidden");
-          }, 4000);
+            successMessage.classList.remove("show")
+            // Attendre la fin de l'animation avant de cacher complètement
+            setTimeout(() => {
+              successMessage.classList.add("hidden")
+            }, 300)
+          }, 4000)
 
-          contactForm.reset();
+          contactForm.reset()
         } else {
-          alert("Erreur lors de l'envoi du formulaire.");
+          alert("Erreur lors de l'envoi du formulaire.")
         }
       } catch (error) {
-        alert("Erreur de connexion ou réseau.");
-        console.error(error);
+        alert("Erreur de connexion ou réseau.")
+        console.error(error)
       }
-    });
+    })
   }
-});
+})
