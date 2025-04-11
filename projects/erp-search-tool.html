@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outil de recherche avancée des paramètres d'un ERP - Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .project-detail {
+      padding: 4rem 0;
+    }
+    
+    .project-detail-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .project-detail-image {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+    }
+    
+    .project-detail-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-detail-subtitle {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+    
+    .project-detail-section {
+      margin-bottom: 2rem;
+    }
+    
+    .project-detail-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .project-detail-section ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .project-detail-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      color: var(--color-text);
+    }
+    
+    .back-button i {
+      margin-right: 0.5rem;
+    }
+    
+    .github-button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .info-card {
+      background-color: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .info-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary);
+    }
+    
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .tech-tag {
+      background-color: var(--color-background-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .screenshot-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .screenshot-caption {
+      padding: 0.75rem;
+      background-color: var(--color-background);
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+    
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 2rem;
+    }
+    
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--color-border);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2rem;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+    }
+    
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo">Portfolio</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+          <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-detail">
+      <div class="container">
+        <div class="project-detail-container">
+          <a href="../index.html#projects" class="back-button">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+          </a>
+          
+          <h1 class="project-detail-title">Outil de recherche avancée des paramètres d'un ERP</h1>
+          <p class="project-detail-subtitle">Stage de 10 semaines chez OKTEO - Équipe Micgest</p>
+          
+          <img src="https://via.placeholder.com/800x400" alt="Interface de l'outil de recherche avancée" class="project-detail-image">
+          
+          <div class="project-detail-section">
+            <h3>Contexte du projet</h3>
+            <p>
+              Ce stage d'une durée de dix semaines s'est déroulé dans le cadre de mon BUT Informatique à l'IUT Lyon1 afin de valider ma deuxième année. Au sein du pôle Solutions & Logiciels, l'équipe Micgest se spécialise dans le développement de Micgest, un ERP pour l'industrie et le négoce avec plus de 30 ans d'expérience.
+            </p>
+            <p>
+              L'entreprise OKTEO, en pleine expansion, gère ses opérations à l'aide de divers ERP, dont « Micgest ». Cette croissance s'accompagne d'une demande accrue de la part des clients, nécessitant l'accueil de nouveaux consultants. Cependant, avec l'augmentation du nombre de consultants et la complexité de l'ERP (environ 200 fenêtres de paramètres), retrouver rapidement les paramètres et les données pertinents est devenu un défi majeur.
+            </p>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Problématique</h3>
+            <div class="info-card">
+              <p>
+                L'outil de recherche existant présentait plusieurs problèmes majeurs :
+              </p>
+              <ul>
+                <li><strong>Crashs fréquents</strong> dus à un algorithme obsolète qui ne prenait pas en considération les fenêtres inactives</li>
+                <li><strong>Lenteur excessive</strong> nécessitant jusqu'à 20-30 minutes pour une simple recherche à travers les 200 fenêtres</li>
+                <li><strong>Couverture incomplète</strong> ne tenant pas compte de certaines fenêtres de paramètres</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Objectifs du projet</h3>
+            <ul>
+              <li>Créer un outil de recherche rapide et exhaustif à travers toutes les fenêtres de paramètres de l'ERP</li>
+              <li>Mettre en place une synchronisation automatique lors des modifications dans les fenêtres de paramètres</li>
+              <li>Automatiser la mise à jour régulière de l'outil pour garantir des données toujours à jour</li>
+              <li>Améliorer l'accessibilité en créant une fenêtre dédiée à la recherche via les menus de la page d'accueil</li>
+            </ul>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Solution développée</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-title">Analyse des besoins</div>
+                <p>Identification des utilisateurs principaux (consultants et développeurs) et de leurs besoins spécifiques en termes de recherche dans l'ERP.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Conception de la structure de données</div>
+                <p>Choix du format JSON pour stocker les données de recherche, offrant une structure flexible, simple et lisible. Chaque fenêtre dispose de sa propre structure JSON incluant les données de chaque champ.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Développement de l'interface</div>
+                <p>Création d'une fenêtre dédiée à la recherche, accessible via les menus de la page d'accueil de l'ERP, permettant aux utilisateurs d'accéder rapidement à l'outil tout en bénéficiant d'une navigation fluide.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Implémentation du système de stockage</div>
+                <p>Enregistrement des structures JSON dans la base de données intégrée au projet, dans une table possédant une rubrique JSON spécifique.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Mise en place du système de synchronisation</div>
+                <p>Développement d'un mécanisme de mise à jour automatique des structures JSON lors de toute modification sur les fenêtres de paramètres concernées, assurant une recherche fiable en temps réel.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Automatisation des mises à jour</div>
+                <p>Création d'un processus automatisé de mise à jour des données JSON à des intervalles réguliers, garantissant la fraîcheur des informations disponibles pour la recherche.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Tests et validation</div>
+                <p>Réalisation de tests approfondis pour vérifier la rapidité, l'exhaustivité et la fiabilité de l'outil de recherche dans différents scénarios d'utilisation.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Présentation aux utilisateurs</div>
+                <p>Démonstration de l'outil aux consultants qui ont trouvé ce nouvel outil pertinent, aussi bien pour les nouveaux consultants que pour les anciens.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Outils utilisés</h3>
+            <div class="tech-list">
+              <span class="tech-tag">WinDev (IDE)</span>
+              <span class="tech-tag">Centre de Suivi de Projets</span>
+              <span class="tech-tag">Microsoft Teams</span>
+              <span class="tech-tag">Outlook</span>
+              <span class="tech-tag">Micgest (ERP)</span>
+              <span class="tech-tag">Centre de Contrôle HFSQL</span>
+              <span class="tech-tag">JSON</span>
+            </div>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Captures d'écran</h3>
+            <div class="screenshots-grid">
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Interface principale de l'outil de recherche">
+                <div class="screenshot-caption">Interface principale de l'outil de recherche</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Résultats de recherche dans les paramètres">
+                <div class="screenshot-caption">Résultats de recherche dans les paramètres</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Structure JSON des données">
+                <div class="screenshot-caption">Structure JSON des données</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Accès direct à une fenêtre de paramètres">
+                <div class="screenshot-caption">Accès direct à une fenêtre de paramètres</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Résultats et bilan</h3>
+            <p>
+              Le projet a été réalisé avec succès et présenté aux consultants qui ont trouvé ce nouvel outil pertinent, aussi bien pour les nouveaux consultants que pour les anciens. L'outil s'inscrit parfaitement dans la politique générale de l'entreprise, car il améliore l'efficacité des consultants.
+            </p>
+            <p>
+              Bien que toutes les fonctionnalités prévues aient été implémentées, des pistes d'amélioration ont été identifiées :
+            </p>
+            <ul>
+              <li>Améliorer l'interface pour rendre l'outil plus lisible, notamment concernant les noms des fenêtres et les résultats affichés</li>
+              <li>Catégoriser les paramètres pour regrouper ceux liés à des thèmes similaires, permettant une meilleure sélection</li>
+            </ul>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Compétences développées et apprentissages</h3>
+            <div class="info-card">
+              <h4>Compétences techniques</h4>
+              <ul>
+                <li>Apprentissage et adaptation à un nouvel environnement de développement (WinDev)</li>
+                <li>Manipulation et optimisation de structures de données JSON</li>
+                <li>Conception et implémentation de systèmes de synchronisation automatique</li>
+                <li>Utilisation de bases de données et réalisation de requêtes spécifiques</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Compétences transversales</h4>
+              <ul>
+                <li>Communication technique et vulgarisation pour présenter le projet aux consultants</li>
+                <li>Adaptation à un environnement professionnel et à ses méthodes de travail</li>
+                <li>Analyse de besoins et conception de solutions adaptées</li>
+                <li>Gestion de projet et organisation du travail</li>
+              </ul>
+            </div>
+            <p>
+              Ce stage a confirmé ma curiosité pour les ERP et m'a permis de découvrir un domaine complexe et intéressant. Cette expérience a renforcé mes compétences et a éclairé mon projet professionnel, tout en me permettant d'explorer les différentes formations possibles pour la poursuite de mes études.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright">© 2025 Ediz Buba. Tous droits réservés.</p>
+      <div class="social-links">
+        <a href="https://github.com/EdizBuba" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentDeskMate - Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .project-detail {
+      padding: 4rem 0;
+    }
+    
+    .project-detail-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .project-detail-image {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+    }
+    
+    .project-detail-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-detail-subtitle {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+    
+    .project-detail-section {
+      margin-bottom: 2rem;
+    }
+    
+    .project-detail-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .project-detail-section ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .project-detail-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      color: var(--color-text);
+    }
+    
+    .back-button i {
+      margin-right: 0.5rem;
+    }
+    
+    .github-button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .module-card {
+      background-color: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .module-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary);
+    }
+    
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .screenshot-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .screenshot-caption {
+      padding: 0.75rem;
+      background-color: var(--color-background);
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo">Portfolio</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+          <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-detail">
+      <div class="container">
+        <div class="project-detail-container">
+          <a href="../index.html#projects" class="back-button">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+          </a>
+          
+          <h1 class="project-detail-title">StudentDeskMate</h1>
+          <p class="project-detail-subtitle">Logiciel de placement aléatoire d'étudiants en salle</p>
+          
+          <img src="https://via.placeholder.com/800x400" alt="Interface principale de StudentDeskMate" class="project-detail-image">
+          
+          <div class="project-detail-section">
+            <h3>Contexte du projet</h3>
+            <p>
+              Ce logiciel a été créé pour faciliter la vie des enseignants et professionnels qui ont besoin de placer des étudiants ou des personnes aléatoirement dans une salle, notamment pour des examens. Le projet a été réalisé en collaboration avec deux autres étudiants de deuxième année de BUT Informatique.
+            </p>
+            <p>
+              L'objectif principal était de développer un outil permettant le placement aléatoire des étudiants dans une salle, tout en offrant la possibilité d'imposer certaines contraintes spécifiques, comme l'éloignement entre certains étudiants ou la gestion de groupes.
+            </p>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Architecture et modules techniques</h3>
+            <p>
+              L'architecture de l'application repose sur une approche modulaire, offrant la flexibilité nécessaire pour étendre et améliorer les fonctionnalités au fil du temps. Chaque module est conçu de manière indépendante, mais interagit harmonieusement avec les autres pour assurer une expérience utilisateur cohérente et fluide.
+            </p>
+            
+            <div class="module-card">
+              <h4>1. Placement automatique</h4>
+              <p>
+                La logique de placement automatique repose sur un modèle de graphe, où chaque nœud représente une table de la salle d'examen et chaque arête représente une relation de proximité entre les tables.
+              </p>
+              <ul>
+                <li><strong>Algorithme des couleurs :</strong> Intégré pour garantir une répartition équilibrée des étudiants, cet algorithme attribue des couleurs à chaque nœud du graphe de manière à ce que deux nœuds adjacents n'aient pas la même couleur.</li>
+                <li><strong>Génération de placements aléatoires :</strong> En utilisant l'algorithme des couleurs et les contraintes spécifiques définies, le système génère des placements aléatoires qui respectent les exigences de proximité entre les étudiants.</li>
+                <li><strong>Gestion des contraintes spécifiques :</strong> Prise en charge des contraintes définies par les administrateurs, telles que les groupes d'éloignement et les exigences de proximité entre les étudiants.</li>
+              </ul>
+            </div>
+            
+            <div class="module-card">
+              <h4>2. Interactivité de la salle</h4>
+              <p>
+                L'interface utilisateur offre une expérience interactive riche, comprenant plusieurs fonctionnalités avancées :
+              </p>
+              <ul>
+                <li><strong>Drag and drop :</strong> Les étudiants peuvent être déplacés et placés sur les tables à l'aide d'un glisser-déposer, entièrement implémenté à la main car Processing ne proposait pas de solutions déjà implémentées.</li>
+                <li><strong>Gestion de la sélection de la table :</strong> Les utilisateurs peuvent sélectionner une table spécifique pour afficher ou modifier ses informations, avec un menu contextuel permettant de verrouiller, enlever l'étudiant, rendre inexploitable ou supprimer la table.</li>
+                <li><strong>Verrouillage d'une table :</strong> Les tables peuvent être verrouillées pour empêcher tout déplacement involontaire.</li>
+                <li><strong>Tables inexploitables :</strong> Les tables peuvent être rendues inexploitables pour empêcher tout ajout d'étudiant durant le placement aléatoire.</li>
+                <li><strong>Rotation et redimensionnement :</strong> Les tables peuvent être tournées et redimensionnées pour une disposition personnalisée de la salle.</li>
+              </ul>
+            </div>
+            
+            <div class="module-card">
+              <h4>3. Gestion des fenêtres</h4>
+              <p>
+                Les fenêtres de gestion constituent un aspect essentiel de l'application, offrant une interface conviviale pour diverses tâches :
+              </p>
+              <ul>
+                <li><strong>Gestion des étudiants :</strong> Modification des informations relatives aux étudiants (nom, prénom, numéro d'étudiant, groupe, etc.).</li>
+                <li><strong>Gestion des groupes :</strong> Ajout ou suppression de groupes, ainsi que l'ajout ou la suppression d'étudiants dans un groupe spécifique.</li>
+                <li><strong>Gestion des éloignements :</strong> Configuration des contraintes d'éloignement entre les étudiants.</li>
+                <li><strong>Paramètres de personnalisation :</strong> Options pour personnaliser le thème visuel de l'interface utilisateur, avec la possibilité de modifier tous les éléments graphiques et de gérer des palettes de couleurs personnalisées.</li>
+              </ul>
+            </div>
+            
+            <div class="module-card">
+              <h4>4. Gestion des données</h4>
+              <p>
+                Le module de gestion des données assure la manipulation efficace des informations relatives aux étudiants, aux groupes et à la salle d'examen :
+              </p>
+              <ul>
+                <li><strong>Import du CSV :</strong> Prise en charge de l'importation de fichiers CSV contenant les informations des étudiants, avec vérification des données requises et options flexibles pour mapper les colonnes.</li>
+                <li><strong>Import du SVG :</strong> Les plans de salle au format SVG peuvent être importés pour représenter les murs de la salle, avec mise à l'échelle automatique.</li>
+                <li><strong>Export et import du JSON :</strong> Sauvegarde de la configuration complète de la salle d'examen, y compris les placements des étudiants et les paramètres spécifiques.</li>
+              </ul>
+            </div>
+            
+            <div class="module-card">
+              <h4>5. Sécurité des données</h4>
+              <p>
+                La sécurité des données est une priorité absolue pour l'application :
+              </p>
+              <ul>
+                <li><strong>Chiffrement des données :</strong> Toutes les données sensibles sont chiffrées avant d'être stockées ou exportées, utilisant l'algorithme de chiffrement AES.</li>
+                <li><strong>Gestion des accès :</strong> Système d'authentification pour contrôler l'accès à l'application, avec identifiants (login et mot de passe) requis pour accéder aux fonctionnalités de gestion.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Captures d'écran</h3>
+            <div class="screenshots-grid">
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Interface principale avec disposition de salle">
+                <div class="screenshot-caption">Interface principale avec disposition de salle</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Placement aléatoire des étudiants">
+                <div class="screenshot-caption">Placement aléatoire des étudiants</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Gestion des étudiants">
+                <div class="screenshot-caption">Gestion des étudiants</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Paramètres de personnalisation">
+                <div class="screenshot-caption">Paramètres de personnalisation</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Import/Export de données">
+                <div class="screenshot-caption">Import/Export de données</div>
+              </div>
+              <div class="screenshot-item">
+                <img src="https://via.placeholder.com/400x300" alt="Gestion des contraintes d'éloignement">
+                <div class="screenshot-caption">Gestion des contraintes d'éloignement</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-detail-section">
+            <h3>Compétences développées</h3>
+            <ul>
+              <li>Conception et implémentation d'algorithmes complexes (algorithme des couleurs pour le placement)</li>
+              <li>Développement d'interfaces utilisateur interactives avec Processing</li>
+              <li>Implémentation de fonctionnalités de drag and drop personnalisées</li>
+              <li>Gestion de données et formats de fichiers (CSV, SVG, JSON)</li>
+              <li>Mise en place de mesures de sécurité (chiffrement AES)</li>
+              <li>Travail en équipe et gestion de projet collaboratif</li>
+              <li>Conception d'architecture modulaire et extensible</li>
+            </ul>
+          </div>
+          
+          <div class="github-button-container">
+            <a href="https://github.com/username/student-desk-mate" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fab fa-github"></i> Voir le code source sur GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright">© 2023 Jean Dupont. Tous droits réservés.</p>
+      <div class="social-links">
+        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
