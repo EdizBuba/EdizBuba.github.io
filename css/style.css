@@ -693,11 +693,17 @@ ul {
 
 .project-detail-image {
   width: 100%;
+  max-width: 900px;
+  max-height: 600px;
   height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
   border-radius: var(--border-radius);
   margin-bottom: 2rem;
   box-shadow: var(--shadow);
 }
+
 
 .project-detail-title {
   font-size: 2rem;
