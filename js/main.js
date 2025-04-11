@@ -80,4 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   }
+
+    // Lightbox
+    const lightbox = document.getElementById("lightbox")
+    const lightboxImg = document.getElementById("lightbox-img")
+    const closeBtn = document.querySelector(".lightbox-close")
+  
+    document.querySelectorAll(".screenshot-item img").forEach((img) => {
+      img.style.cursor = "zoom-in"
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src
+        lightbox.style.display = "flex"
+      })
+    })
+  
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === closeBtn) {
+        lightbox.style.display = "none"
+      }
+    })
+  
 })
