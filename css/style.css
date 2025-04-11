@@ -354,9 +354,20 @@ ul {
   border-radius: 2px;
 }
 
+.about-text {
+  max-width: 100%;
+}
+
 .about-text p {
-  margin-bottom: 1rem;
-  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+/* Ajout d'un style pour le premier paragraphe */
+.about-text p:first-of-type {
+  font-weight: 500;
 }
 
 /* Tabs */
@@ -370,7 +381,7 @@ ul {
 
 .tabs-header {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background-color: var(--color-primary-bg);
 }
 
@@ -897,6 +908,33 @@ ul {
 }
 
 /* Responsive */
+@media (max-width: 767px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text {
+    order: 1;
+  }
+
+  .skills {
+    order: 2;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .tabs-header {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .tab-btn {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
 @media (min-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr 1fr;
@@ -937,4 +975,9 @@ ul {
 
 .btn-primary:hover {
   animation: pulse 2s infinite;
+}
+
+/* Ajustement de la hauteur minimale de la section pour éviter les sauts brusques */
+.about.section {
+  min-height: 80vh;
 }
