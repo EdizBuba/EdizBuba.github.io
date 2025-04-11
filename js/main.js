@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxImg = document.getElementById("lightbox-img")
     const closeBtn = document.querySelector(".lightbox-close")
   
-    document.querySelectorAll(".screenshot-item img").forEach((img) => {
+    document.querySelectorAll(".screenshot-item img, .lightbox-trigger").forEach((img) => {
       img.style.cursor = "zoom-in"
       img.addEventListener("click", () => {
         lightboxImg.src = img.src
