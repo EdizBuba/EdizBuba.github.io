@@ -444,6 +444,28 @@ ul {
   color: var(--color-primary);
 }
 
+/* Education */
+
+.education {
+  margin-top: 2rem;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education-item {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 /* Projects Section */
 .projects-grid {
   display: grid;
