@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7f8" />
+    <meta name="description" content="Portfolio d'Ediz Buba, étudiant ingénieur à CPE Lyon et développeur Java en alternance chez Sopra Steria." />
+    <link rel="canonical" href="https://edizbuba.github.io/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://edizbuba.github.io/" />
+    <meta property="og:title" content="Ediz Buba — Software Engineer" />
+    <meta property="og:description" content="Portfolio d'Ediz Buba, étudiant ingénieur à CPE Lyon et développeur Java en alternance chez Sopra Steria." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ediz Buba — Software Engineer" />
+    <meta name="twitter:description" content="Portfolio d'Ediz Buba, étudiant ingénieur à CPE Lyon et développeur Java en alternance chez Sopra Steria." />
+    <title>Ediz Buba — Software Engineer</title>
+    <script>
+      (() => {
+        const stored = localStorage.getItem('portfolio-theme');
+        const theme = stored === 'light' || stored === 'dark'
+          ? stored
+          : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0b0e11' : '#f5f7f8');
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
