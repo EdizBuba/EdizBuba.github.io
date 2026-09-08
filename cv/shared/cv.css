@@ -1,0 +1,237 @@
+:root {
+  --ink: #111820;
+  --muted: #52606c;
+  --accent: #007e9e;
+  --accent-soft: #e8f5f7;
+  --line: #cfd8dc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: #e9edf0;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body { font-size: 10pt; line-height: 1.34; }
+
+a { color: inherit; text-decoration: none; }
+
+.cv {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 12mm auto;
+  padding: 13mm 14mm 11mm;
+  background: #fff;
+  box-shadow: 0 8px 32px rgb(12 30 40 / 14%);
+}
+
+.identity {
+  display: grid;
+  grid-template-columns: 27mm minmax(0, 1fr);
+  gap: 8mm;
+  align-items: center;
+  padding-bottom: 5mm;
+  border-bottom: 1.2pt solid var(--ink);
+}
+
+.identity--no-photo {
+  display: block;
+}
+
+.identity--no-photo .name {
+  font-size: 30pt;
+}
+
+.identity--no-photo .contact-list {
+  gap: 1.2mm 5mm;
+}
+
+.identity--no-photo .contact-list li:not(:last-child)::after {
+  margin-left: 5mm;
+}
+
+.portrait {
+  width: 27mm;
+  height: 27mm;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 38%;
+  filter: grayscale(12%);
+}
+
+.name {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 27pt;
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.role {
+  margin: 2.6mm 0 0;
+  color: var(--accent);
+  font-size: 11.5pt;
+  font-weight: 700;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2mm 4mm;
+  margin: 3mm 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 8.7pt;
+}
+
+.contact-list li:not(:last-child)::after {
+  margin-left: 4mm;
+  color: var(--line);
+  content: '/';
+}
+
+.contact-list a { border-bottom: 0.5pt solid var(--line); }
+
+.profile {
+  display: grid;
+  grid-template-columns: 25mm 1fr;
+  gap: 5mm;
+  padding: 4.5mm 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.profile p { margin: 0; color: #26343d; }
+
+.section-label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 8pt;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.52fr) minmax(0, 0.92fr);
+  gap: 9mm;
+  padding-top: 5mm;
+}
+
+.column { min-width: 0; }
+
+.section + .section { margin-top: 5mm; }
+
+.section > .section-label {
+  padding-bottom: 2mm;
+  border-bottom: 1.2pt solid var(--ink);
+}
+
+.entry {
+  break-inside: avoid;
+  padding-top: 3mm;
+}
+
+.entry + .entry {
+  margin-top: 3mm;
+  padding-top: 3.2mm;
+  border-top: 1px solid var(--line);
+}
+
+.entry-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4mm;
+  align-items: start;
+}
+
+.entry h2,
+.entry h3 {
+  margin: 0;
+  font-size: 10.6pt;
+  line-height: 1.2;
+}
+
+.entry .organization {
+  margin: 0 0 0.6mm;
+  color: var(--accent);
+  font-size: 8.2pt;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 8.2pt;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.entry-summary { margin: 1.5mm 0 0; color: var(--muted); font-size: 8.9pt; }
+
+.entry ul {
+  margin: 1.8mm 0 0;
+  padding-left: 4.2mm;
+}
+
+.entry li { margin-bottom: 1mm; padding-left: 0.7mm; }
+
+.stack {
+  margin: 1.8mm 0 0;
+  color: var(--accent);
+  font-size: 8.3pt;
+  font-weight: 700;
+}
+
+.education .entry-head { display: block; }
+.education .meta { margin-top: 0.7mm; text-align: left; white-space: normal; }
+
+.skills {
+  display: grid;
+  gap: 2.4mm;
+  padding-top: 3mm;
+}
+
+.skill-group { break-inside: avoid; }
+.skill-group h3 { margin: 0 0 0.8mm; font-size: 8.4pt; text-transform: uppercase; }
+.skill-group p { margin: 0; color: var(--muted); font-size: 8.8pt; }
+
+.languages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+  padding-top: 3mm;
+}
+
+.language {
+  padding-left: 2.5mm;
+  border-left: 2pt solid var(--accent);
+}
+
+.language strong { display: block; font-size: 9pt; }
+.language span { color: var(--muted); font-size: 8.2pt; }
+
+.footer-note {
+  margin: 4mm 0 0;
+  padding-top: 2.5mm;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 8.1pt;
+}
+
+@page { size: A4; margin: 0; }
+
+@media print {
+  :root { background: #fff; }
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .cv { margin: 0; box-shadow: none; }
+}
+
+@media screen and (max-width: 820px) {
+  .cv { width: min(100%, 210mm); margin: 0 auto; }
+}
