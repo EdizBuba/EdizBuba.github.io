@@ -107,8 +107,8 @@
 @media (max-width: 390px) {
   .hero h1 { font-size: 4.4rem; }
   .hero h1 span:last-child { margin-left: 1.5rem; }
-  .hero__actions { display: grid; }
-  .hero__actions .button { width: 100%; }
+  .hero__actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .hero__actions .button { width: 100%; min-width: 0; justify-content: center; text-align: center; }
   .hero__visual { width: 94%; padding-left: 1.6rem; }
   .project-card__actions { align-items: flex-start; flex-direction: column; }
   .contact__email { font-size: 1.35rem; }

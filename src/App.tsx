@@ -42,7 +42,7 @@ function App() {
         activeSection={activeSection}
       />
       <main id="main-content">
-        <Hero copy={copy.hero} />
+        <Hero copy={copy.hero} language={language} />
         <About copy={copy.about} />
         <Projects copy={copy.projects} language={language} />
         <Experience copy={copy.experience} language={language} />

@@ -26,7 +26,6 @@ export const en: Copy = {
     intro: 'Engineering student at CPE Lyon.\nJava developer apprentice at Sopra Steria.',
     explore: 'Explore my work',
     downloadCv: 'Download CV',
-    cvUnavailable: 'Update in progress',
     portraitAlt: 'Portrait of Ediz Buba',
     scroll: 'Scroll',
     availability: 'Lyon, France',

@@ -19,7 +19,6 @@ export interface Copy {
     intro: string
     explore: string
     downloadCv: string
-    cvUnavailable: string
     portraitAlt: string
     scroll: string
     availability: string

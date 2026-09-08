@@ -26,7 +26,6 @@ export const fr: Copy = {
     intro: 'Étudiant ingénieur à CPE Lyon.\nDéveloppeur Java en alternance chez Sopra Steria.',
     explore: 'Découvrir mes projets',
     downloadCv: 'Télécharger le CV',
-    cvUnavailable: 'Mise à jour en cours',
     portraitAlt: 'Portrait d’Ediz Buba',
     scroll: 'Défiler',
     availability: 'Lyon, France',

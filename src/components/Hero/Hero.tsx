@@ -1,12 +1,16 @@
 import { ArrowDown, ArrowRight, Download, Github, Linkedin } from 'lucide-react'
 import type { Copy } from '../../i18n/types'
 import { siteData } from '../../data/site'
+import type { Language } from '../../i18n/types'
 
 interface HeroProps {
   copy: Copy['hero']
+  language: Language
 }
 
-export function Hero({ copy }: HeroProps) {
+export function Hero({ copy, language }: HeroProps) {
+  const cvPath = siteData.cv[language]
+
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
       <div className="hero__content">
@@ -24,11 +28,10 @@ export function Hero({ copy }: HeroProps) {
           <a className="button button--primary" href="#projects">
             {copy.explore}<ArrowRight aria-hidden="true" />
           </a>
-          {/* TODO(content): Replace the legacy CV, add its public path and restore this CTA as a link. */}
-          <span className="button button--ghost button--disabled" aria-disabled="true">
-            <span>{copy.downloadCv}<small>{copy.cvUnavailable}</small></span>
+          <a className="button button--ghost" href={cvPath} download={cvPath.split('/').at(-1)}>
+            <span>{copy.downloadCv}</span>
             <Download aria-hidden="true" />
-          </span>
+          </a>
         </div>
 
         <div className="hero__socials" aria-label={copy.socialLinks}>
