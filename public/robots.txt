@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edizbuba.github.io/sitemap.xml
+Sitemap: https://ediz-buba.com/sitemap.xml
