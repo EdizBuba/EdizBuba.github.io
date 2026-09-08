@@ -39,6 +39,18 @@ export interface Copy {
     title: string
     intro: string
     selected: string
+    professional: string
+    experiments: string
+    professionalIntro: string
+    selectedIntro: string
+    experimentsIntro: string
+    viewContribution: string
+    github: string
+    demo: string
+    unpublishedCode: string
+    abstractVisual: string
+    originalScreens: string
+    arVisual: string
     learnMore: string
     close: string
     privateCode: string
@@ -50,6 +62,11 @@ export interface Copy {
       result: string
       stack: string
       gallery: string
+      context: string
+      contributions: string
+      learning: string
+      notableContribution: string
+      otherContributions: string
     }
   }
   experience: {

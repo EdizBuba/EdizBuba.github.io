@@ -4,7 +4,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'software-backend',
     title: { fr: 'Développement logiciel & backend', en: 'Software development & backend' },
-    skills: ['Java', 'WinDev', 'REST APIs'],
+    skills: ['Java', 'Python', 'C++', 'WinDev', 'REST APIs'],
   },
   {
     id: 'web-mobile',
@@ -14,7 +14,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'data-databases',
     title: { fr: 'Données & bases de données', en: 'Data & Databases' },
-    skills: ['SQL', 'MySQL', 'SQLite', 'HFSQL', 'MongoDB', 'Firebase'],
+    skills: ['SQL', 'DB2', 'MySQL', 'SQLite', 'HFSQL', 'MongoDB', 'Firebase'],
   },
   {
     id: 'devops-tools',
