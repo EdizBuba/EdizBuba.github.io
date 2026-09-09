@@ -1,0 +1,21 @@
+{
+  "name": "Ediz Buba — Portfolio",
+  "short_name": "Ediz Buba",
+  "description": "Portfolio d’Ediz Buba, étudiant ingénieur et développeur Java en alternance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0e11",
+  "theme_color": "#0b0e11",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
