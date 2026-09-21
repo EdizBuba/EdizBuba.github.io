@@ -4,8 +4,8 @@
   "description": "Portfolio d’Ediz Buba, étudiant ingénieur et développeur Java en alternance.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b0e11",
-  "theme_color": "#0b0e11",
+  "background_color": "#f4f1ea",
+  "theme_color": "#f4f1ea",
   "icons": [
     {
       "src": "/favicon-192x192.png",

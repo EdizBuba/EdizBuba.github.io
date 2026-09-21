@@ -7,8 +7,6 @@ export interface Copy {
     logoHome: string
     menuOpen: string
     menuClose: string
-    themeLight: string
-    themeDark: string
     language: string
     items: Record<'about' | 'projects' | 'experience' | 'skills' | 'education' | 'contact', string>
   }

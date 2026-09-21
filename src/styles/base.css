@@ -2,13 +2,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-height) + 22px);
+  scroll-padding-top: calc(var(--nav-height) + 12px);
   background: var(--color-bg);
 }
 
 body {
   margin: 0;
-  min-width: 320px;
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -16,7 +15,6 @@ body {
   line-height: 1.7;
   overflow-x: clip;
   text-rendering: optimizeLegibility;
-  transition: background-color 240ms ease, color 240ms ease;
 }
 
 body.modal-open { overflow: hidden; }
@@ -48,8 +46,8 @@ p { text-wrap: pretty; }
 ul, ol { margin: 0; padding: 0; }
 
 ::selection {
-  background: var(--color-accent);
-  color: #031219;
+  background: var(--color-accent-bright);
+  color: var(--color-selection-text);
 }
 
 :focus-visible {
@@ -65,11 +63,6 @@ ul, ol { margin: 0; padding: 0; }
 .section {
   padding: clamp(5.5rem, 9vw, 8rem) 0;
   border-top: 1px solid var(--color-line);
-}
-
-section[id],
-.hero[id] {
-  scroll-margin-top: calc(var(--nav-height) + 22px);
 }
 
 .section--tinted { background: var(--color-surface); }

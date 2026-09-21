@@ -16,7 +16,7 @@ import { translations } from './i18n'
 const sectionIds = ['about', 'projects', 'experience', 'skills', 'education', 'contact']
 
 function App() {
-  const { language, setLanguage, theme, toggleTheme } = usePreferences()
+  const { language, setLanguage } = usePreferences()
   const activeSection = useActiveSection(sectionIds)
   const copy = translations[language]
   useReveal()
@@ -37,8 +37,6 @@ function App() {
         copy={copy.navigation}
         language={language}
         setLanguage={setLanguage}
-        theme={theme}
-        toggleTheme={toggleTheme}
         activeSection={activeSection}
       />
       <main id="main-content">

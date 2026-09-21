@@ -7,8 +7,6 @@ export const fr: Copy = {
     logoHome: 'Ediz Buba — accueil',
     menuOpen: 'Ouvrir le menu',
     menuClose: 'Fermer le menu',
-    themeLight: 'Activer le thème clair',
-    themeDark: 'Activer le thème sombre',
     language: 'Choisir la langue',
     items: {
       about: 'À propos',

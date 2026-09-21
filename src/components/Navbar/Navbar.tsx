@@ -1,20 +1,17 @@
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import type { Copy, Language } from '../../i18n/types'
-import type { Theme } from '../../hooks/usePreferences'
 
 interface NavbarProps {
   copy: Copy['navigation']
   language: Language
   setLanguage: (language: Language) => void
-  theme: Theme
-  toggleTheme: () => void
   activeSection: string
 }
 
 const sectionIds = ['about', 'projects', 'experience', 'skills', 'education', 'contact'] as const
 
-export function Navbar({ copy, language, setLanguage, theme, toggleTheme, activeSection }: NavbarProps) {
+export function Navbar({ copy, language, setLanguage, activeSection }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -72,14 +69,6 @@ export function Navbar({ copy, language, setLanguage, theme, toggleTheme, active
               </button>
             ))}
           </div>
-          <button
-            type="button"
-            className="icon-button"
-            onClick={toggleTheme}
-            aria-label={theme === 'dark' ? copy.themeLight : copy.themeDark}
-          >
-            {theme === 'dark' ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
-          </button>
         </div>
       </div>
     </header>
