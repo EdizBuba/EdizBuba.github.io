@@ -28,6 +28,10 @@ export const projects: Project[] = [
       fr: 'Contribution à l’évolution et à la maintenance d’un progiciel métier de grande ampleur dédié à la gestion immobilière : développement de fonctionnalités, évolution de modules existants, analyse et correction d’anomalies, traitement de données et validation des développements.',
       en: 'Contributing to the development and maintenance of a large-scale real estate management software product: building features, enhancing existing modules, investigating and fixing issues, processing data and validating changes.',
     },
+    modalIntro: {
+      fr: 'Sur IKOS, je développe et maintiens des fonctionnalités d’un progiciel de gestion immobilière.',
+      en: 'On IKOS, I develop and maintain features in a real estate management software product.',
+    },
     technologies: ['Java', 'JSF / PrimeFaces', 'JSP', 'Struts', 'DB2 / SQL', 'Git'],
     codeVisibility: 'private',
     visual: {
@@ -36,32 +40,24 @@ export const projects: Project[] = [
     },
     details: {
       kind: 'professional',
-      context: {
-        fr: 'Je travaille sur IKOS au sein de Sopra Real Estate Software, dans le cadre de mon alternance de développeur Java chez Sopra Steria et de ma formation d’ingénieur à CPE Lyon.',
-        en: 'I work on IKOS within Sopra Real Estate Software as a Java developer apprentice at Sopra Steria, alongside my engineering degree at CPE Lyon.',
-      },
       role: {
-        fr: 'Contribuer à l’évolution de l’application, de l’analyse du besoin jusqu’au développement, aux tests et à la validation des fonctionnalités.',
-        en: 'Contributing to application enhancements, from requirements analysis through feature development, testing and validation.',
-      },
-      contributions: {
-        fr: ['Développement de nouvelles fonctionnalités et évolution de modules existants en Java.', 'Analyse et correction d’anomalies sur l’existant.', 'Manipulation de données SQL et gestion des modifications avec Git.', 'Analyse des besoins, tests et validation des développements.'],
-        en: ['Developing new features and enhancing existing Java modules.', 'Investigating and fixing issues in the existing application.', 'Working with SQL data and managing code changes with Git.', 'Analyzing requirements, testing and validating changes.'],
+        fr: 'J’analyse les besoins, fais évoluer les modules Java, puis teste et valide les changements.',
+        en: 'I analyze requirements, enhance Java modules, then test and validate changes.',
       },
     },
     notableContributions: [{
       title: { fr: 'Personnalisation contrôlée des contenus de communication', en: 'Controlled customization of communication content' },
       problem: {
-        fr: 'Les utilisateurs devaient pouvoir personnaliser certains contenus de communication sans modifier librement l’intégralité du message. L’objectif était de préserver cette flexibilité tout en encadrant la saisie.',
-        en: 'Users needed to customize parts of a communication without being able to freely edit the entire message. The aim was to retain flexibility while keeping input within defined boundaries.',
+        fr: 'Permettre aux utilisateurs de personnaliser certains contenus sans modifier librement l’ensemble du message.',
+        en: 'Let users customize parts of a communication without allowing unrestricted edits to the whole message.',
       },
       role: {
-        fr: 'J’ai adapté un mécanisme existant de zones modifiables au contexte des campagnes de communication. Mon travail a couvert la compréhension de l’existant, l’adaptation des écrans, la gestion et la propagation des valeurs saisies, ainsi que les traitements, tests et corrections associés.',
-        en: 'I adapted an existing editable-area mechanism for communication campaigns. My work involved understanding the existing implementation, updating the screens, managing user-entered values and passing them through the workflow, as well as adapting the related processing, testing and fixing issues.',
+        fr: 'J’ai adapté les écrans, la gestion des valeurs saisies et les traitements de diffusion, puis testé et corrigé la fonctionnalité.',
+        en: 'I updated the screens, handling of entered values and distribution processing, then tested and fixed the feature.',
       },
       solution: {
-        fr: 'La solution réutilise le mécanisme existant de zones modifiables. Définies dans le paramétrage, ces zones sont renseignées lors de la préparation d’une campagne. Les valeurs saisies sont conservées et transmises au cours du traitement de diffusion pour générer les communications avec le contenu personnalisé attendu.',
-        en: 'The solution reuses the existing editable-area mechanism. Areas are defined in the configuration and filled in when preparing a campaign. The entered values are retained and passed through the distribution process so that communications are generated with the intended personalized content.',
+        fr: 'Les zones modifiables existantes sont configurées, renseignées lors de la préparation d’une campagne, puis transmises au traitement de diffusion.',
+        en: 'Existing editable areas are configured, filled in when preparing a campaign, then passed through the distribution process.',
       },
       result: {
         fr: 'La fonctionnalité conserve la personnalisation des communications tout en limitant les modifications aux zones prévues à cet effet.',
@@ -76,23 +72,22 @@ export const projects: Project[] = [
       {
         title: { fr: 'Évolution des campagnes de communication', en: 'Enhancing communication campaigns' },
         description: {
-          fr: 'Ajout de comportements fonctionnels autour de la validation, des pièces jointes, des comptes-rendus de diffusion et de certains droits d’accès, avec adaptation des écrans, de la logique métier et des traitements associés.',
-          en: 'Added functionality for validation, attachments, distribution reports and selected access permissions, with corresponding changes to screens, business logic and associated processing.',
+          fr: 'Évolution de la validation, des pièces jointes, des comptes-rendus de diffusion et de certains droits d’accès.',
+          en: 'Enhanced validation, attachments, distribution reports and selected access permissions.',
         },
       },
       {
         title: { fr: 'Modèles de flux dynamiques', en: 'Dynamic data flow templates' },
         description: {
-          fr: 'Développement d’écrans de paramétrage de modèles de flux avec validations fonctionnelles, gestion de contenus structurés et insertion de variables dynamiques à partir d’une structure XML/XSD.',
-          en: 'Developed configuration screens for data flow templates, including business validation, structured content management and dynamic variable insertion based on an XML/XSD structure.',
+          fr: 'Développement d’écrans de paramétrage avec validations et insertion de variables dynamiques à partir d’une structure XML/XSD.',
+          en: 'Built configuration screens with validation and dynamic variable insertion based on an XML/XSD structure.',
         },
-        technologies: ['Java', 'JSF', 'DB2 / SQL', 'XML / XSD'],
       },
       {
         title: { fr: 'Optimisation d’une recherche métier', en: 'Improving business data search' },
         description: {
-          fr: 'Amélioration d’un écran de sélection avec tri, pagination, recherche multicritère et priorisation des résultats pour faciliter la navigation dans un volume croissant de données métier.',
-          en: 'Improved a selection screen with sorting, pagination, multi-criteria search and result prioritization to make a growing volume of business data easier to navigate.',
+          fr: 'Amélioration d’une recherche métier avec tri, pagination, critères multiples et priorisation des résultats.',
+          en: 'Improved business search with sorting, pagination, multiple criteria and result prioritization.',
         },
       },
     ],
@@ -114,43 +109,37 @@ export const projects: Project[] = [
       fr: 'Faire évoluer un ERP en contexte professionnel, de ses fonctionnalités métier aux outils destinés aux utilisateurs. Une expérience menée chez OKTEO pendant mon BUT Informatique.',
       en: 'Enhancing a business ERP, from its core features to user-facing tools. Work carried out at OKTEO during my BUT Informatique degree.',
     },
+    modalIntro: {
+      fr: 'Chez OKTEO, j’ai fait évoluer Micgest, un ERP métier, pendant mon alternance.',
+      en: 'At OKTEO, I worked on Micgest, a business ERP, during my apprenticeship.',
+    },
     technologies: ['WinDev', 'HFSQL', 'SQL'],
     details: {
       kind: 'professional',
-      context: {
-        fr: 'Micgest est l’ERP sur lequel j’ai travaillé chez OKTEO pendant mon parcours en BUT Informatique, notamment durant mon alternance de 2024 à 2025.',
-        en: 'Micgest is the ERP I worked on at OKTEO during my BUT Informatique, including my 2024–2025 apprenticeship.',
-      },
       role: {
-        fr: 'J’ai participé au développement de fonctionnalités, à l’analyse d’anomalies et à la création d’outils facilitant l’utilisation de l’ERP.',
-        en: 'I contributed to feature development, investigated software issues and built tools to make the ERP easier to use.',
-      },
-      contributions: {
-        fr: ['Développement et évolution de fonctionnalités en WinDev.', 'Travail sur les données SQL et HFSQL.', 'Analyse des besoins avec les utilisateurs et consultants.', 'Conception, tests et validation d’un outil de recherche de paramètres.'],
-        en: ['Developing and enhancing features in WinDev.', 'Working with SQL and HFSQL data.', 'Discussing requirements with users and consultants.', 'Designing, testing and validating a settings search tool.'],
+        fr: 'J’ai développé des fonctionnalités en WinDev, travaillé sur les données SQL/HFSQL et analysé les besoins avec les utilisateurs et consultants.',
+        en: 'I developed features in WinDev, worked with SQL/HFSQL data and discussed requirements with users and consultants.',
       },
     },
     notableContributions: [{
-      title: { fr: 'Retrouver les paramètres de l’ERP', en: 'Finding ERP settings' },
+      title: { fr: 'Outil de recherche des paramètres ERP', en: 'ERP Settings Search Tool' },
       problem: {
-        fr: 'Les paramètres étaient répartis dans de nombreuses fenêtres. L’outil existant ne permettait pas de les retrouver de façon suffisamment fiable et complète.',
-        en: 'Settings were spread across many windows, and the existing tool did not provide a reliable, comprehensive way to find them.',
+        fr: 'Les paramètres étaient répartis dans de nombreuses fenêtres et l’outil existant ne permettait pas de les retrouver de façon fiable et complète.',
+        en: 'Settings were spread across many windows, and the existing tool could not find them reliably or comprehensively.',
       },
       role: {
         fr: 'Analyse du besoin avec les consultants, conception, développement, tests et présentation de la solution.',
         en: 'Requirements analysis with consultants, design, implementation, testing and presentation of the solution.',
       },
       solution: {
-        fr: 'Un outil de recherche centralisé pour retrouver les paramètres et y accéder plus facilement, tout en maintenant les informations à jour et en respectant le fonctionnement de l’ERP.',
-        en: 'A centralized search tool that makes settings easier to find and access, while keeping information up to date and fitting the existing ERP workflow.',
+        fr: 'Un outil de recherche centralisé facilite l’accès aux paramètres tout en gardant les informations à jour et en respectant le fonctionnement de l’ERP.',
+        en: 'A centralized search tool makes settings easier to find while keeping information current and fitting the existing ERP workflow.',
       },
       result: {
-        fr: 'L’outil a été livré et présenté aux consultants. Les pistes identifiées ensuite concernent surtout la lisibilité et la catégorisation des résultats.',
-        en: 'The tool was delivered and presented to consultants. The next improvements identified mainly concern readability and result categorization.',
+        fr: 'L’outil a été livré et présenté aux consultants ; la lisibilité et la catégorisation des résultats restent des pistes d’amélioration.',
+        en: 'The tool was delivered and presented to consultants; result readability and categorization remain areas for improvement.',
       },
-      image: image('erp-search-tool/affiche', 1536, 1024,
-        'Illustration générique de recherche ERP, sans interface ni données de Micgest',
-        'Generic ERP search illustration, not a Micgest interface or dataset'),
+      visual: 'abstract',
     }],
     // Product screenshots are archived outside public/; do not republish them.
     gallery: [],
@@ -177,8 +166,8 @@ export const projects: Project[] = [
         en: 'Control watering remotely while accounting for soil moisture, temperature and water level.',
       },
       role: {
-        fr: 'Projet réalisé en binôme en troisième année de BUT Informatique, de la conception du système à l’application mobile et au prototype physique.',
-        en: 'A two-person third-year Computer Science B.U.T. project, spanning system design, the mobile app and the physical prototype.',
+        fr: 'En binôme, j’ai participé à la conception du système, de l’application mobile et du prototype physique.',
+        en: 'Working in a pair, I helped design the system, mobile app and physical prototype.',
       },
       solution: {
         fr: 'L’application gère les plantes et leurs seuils, Firebase synchronise les données, et l’ESP32 pilote capteurs et pompe en mode automatique ou manuel.',
@@ -195,7 +184,6 @@ export const projects: Project[] = [
     },
     gallery: [
       ...plantScreens,
-      image('smart-watering-system/compte', 480, 1079, 'Réglage du délai des notifications', 'Notification timing settings'),
       image('smart-watering-system/diagram', 1536, 1024, 'Schéma du prototype : capteurs, cloud et application mobile', 'Prototype diagram: sensors, cloud and mobile app'),
     ],
   },
@@ -240,7 +228,6 @@ export const projects: Project[] = [
       arView,
       image('soieries-bonnet/accueil', 454, 982, 'Catalogue des maquettes dans l’application iOS', 'Model catalogue in the iOS app'),
       image('soieries-bonnet/detail_2', 453, 981, 'Aperçu 3D et informations sur la maquette', '3D preview and model information'),
-      image('soieries-bonnet/affiche', 640, 384, 'Photographie historique des Soieries Bonnet : contexte du projet', 'Historic photograph of Soieries Bonnet: project context'),
     ],
   },
   {
@@ -256,12 +243,9 @@ export const projects: Project[] = [
     codeVisibility: 'public',
     github: 'https://github.com/EdizBuba/CineList-public',
     details: {
-      kind: 'technical',
-      problem: { fr: 'Consulter des contenus de séries et d’animes depuis une application Android native.', en: 'Access series and anime content in a native Android app.' },
-      role: { fr: 'Projet universitaire réalisé en binôme avec Abdellah Boussaha.', en: 'An academic project built with Abdellah Boussaha.' },
-      solution: { fr: 'Des appels à SIMKL avec Retrofit, des modèles Kotlin et une séparation des accès aux données dans des repositories. Le projet utilise également les coroutines et ViewModel.', en: 'SIMKL requests through Retrofit, Kotlin data models and repositories separating data access. The project also uses coroutines and ViewModel.' },
-      challenges: { fr: 'Relier les réponses d’une API externe aux écrans Android et gérer les échanges asynchrones.', en: 'Connecting external API responses to Android screens and handling asynchronous requests.' },
-      result: { fr: 'Une démonstration universitaire dont la version publique est accessible sans compte. Le fonctionnement des appels distants dépend de l’API SIMKL.', en: 'An academic demo whose public version can be entered without an account. Remote requests depend on the SIMKL API.' },
+      kind: 'compact',
+      goal: { fr: 'Consulter des séries et des animes depuis une application Android native.', en: 'Browse series and anime in a native Android app.' },
+      contribution: { fr: 'En binôme avec Abdellah Boussaha, j’ai travaillé sur les appels SIMKL avec Retrofit et la présentation des données Android avec coroutines et ViewModel.', en: 'Working with Abdellah Boussaha, I worked on SIMKL requests with Retrofit and presenting data in Android using coroutines and ViewModel.' },
     },
     gallery: [],
   },
@@ -278,12 +262,9 @@ export const projects: Project[] = [
     codeVisibility: 'public',
     github: 'https://github.com/EdizBuba/iot-project',
     details: {
-      kind: 'technical',
-      problem: { fr: 'Faire circuler des mesures et des commandes entre un dispositif embarqué et une application mobile.', en: 'Exchange measurements and commands between an embedded device and a mobile app.' },
-      role: { fr: 'Contribution au serveur et à l’application Android dans un projet collaboratif, notamment au changement de serveur et à l’affichage de la dernière réception.', en: 'Contributed to the server and Android app in a collaborative project, including server switching and the last-received indicator.' },
-      solution: { fr: 'La passerelle Python lit le port série, convertit les mesures en JSON et les diffuse aux clients UDP. L’application Kotlin affiche les mesures et transmet les commandes de configuration.', en: 'The Python gateway reads the serial port, converts measurements to JSON and broadcasts them to UDP clients. The Kotlin app displays readings and sends configuration commands.' },
-      challenges: { fr: 'Coordonner la réception série, les échanges UDP et les mises à jour de l’interface, en distinguant une commande envoyée de son accusé de réception.', en: 'Coordinating serial input, UDP traffic and UI updates, while distinguishing a sent command from its acknowledgement.' },
-      result: { fr: 'Un serveur et une application Android avec abonnement aux mesures et suivi des commandes. Le dépôt couvre ces deux composants ; le firmware micro:bit appartient à un dépôt séparé.', en: 'A server and Android app with measurement subscriptions and command tracking. This repository covers those two components; the micro:bit firmware lives in a separate repository.' },
+      kind: 'compact',
+      goal: { fr: 'Faire circuler mesures et commandes entre une chaîne micro:bit et une application Android.', en: 'Exchange measurements and commands between a micro:bit setup and an Android app.' },
+      contribution: { fr: 'J’ai contribué à la passerelle Python convertissant les mesures UART en JSON diffusé via UDP, ainsi qu’au changement de serveur et à l’indicateur de dernière réception dans l’application.', en: 'I contributed to the Python gateway that converts UART readings to JSON for UDP clients, and to server switching and the last-received indicator in the app.' },
     },
     gallery: [],
   },
@@ -300,31 +281,22 @@ export const projects: Project[] = [
     },
     technologies: ['Java', 'Processing', 'JSON', 'CSV', 'AES'],
     details: {
-      kind: 'technical',
-      problem: {
-        fr: 'Aider les enseignants à répartir des étudiants de manière aléatoire tout en respectant des groupes et contraintes d’éloignement.',
-        en: 'Help teachers randomly assign students while respecting groups and separation constraints.',
+      kind: 'intermediate',
+      goal: {
+        fr: 'Répartir automatiquement les étudiants dans une salle tout en respectant les groupes et les contraintes d’éloignement.',
+        en: 'Automatically assign students to seats while respecting group and separation constraints.',
       },
-      role: {
-        fr: 'Projet d’équipe de deuxième année. J’ai surtout travaillé sur la liste des étudiants et la récupération des données.',
-        en: 'A second-year team project. I mainly worked on the student list and data retrieval.',
+      contribution: {
+        fr: 'Dans ce projet d’équipe, j’ai principalement travaillé sur la liste des étudiants et la récupération des données utilisées pour l’import.',
+        en: 'In this team project, I primarily worked on the student list and retrieving the data used for imports.',
       },
-      solution: {
-        fr: 'Une application Processing combinant modélisation en graphe, placement automatique, glisser-déposer et import/export CSV, SVG et JSON.',
-        en: 'A Processing app combining graph modeling, automatic placement, drag and drop, and CSV, SVG and JSON import/export.',
-      },
-      challenges: {
-        fr: 'Implémenter des interactions graphiques sans composant prêt à l’emploi et concilier placement aléatoire et contraintes métier.',
-        en: 'Implementing graphical interactions without ready-made components and reconciling random seating with business constraints.',
-      },
-      result: {
-        fr: 'Une application modulaire avec édition du plan, gestion des groupes, sauvegarde et chiffrement des données exportées.',
-        en: 'A modular app with room-plan editing, group management, persistence and encryption for exported data.',
+      technicalPoints: {
+        fr: 'L’application Java / Processing représente la salle en graphe, génère un placement sous contraintes et permet l’édition visuelle par glisser-déposer. Elle prend en charge l’import/export CSV et JSON ainsi que le chiffrement AES des données exportées.',
+        en: 'The Java / Processing app uses a graph-based room model, generates seating arrangements under constraints and supports drag-and-drop editing. It handles CSV and JSON import/export and encrypts exported data with AES.',
       },
     },
     gallery: [
       image('student-desk-mate/interface-table', 1442, 811, 'Plan de salle interactif', 'Interactive room plan'),
-      image('student-desk-mate/import', 1800, 1013, 'Écran d’import de données, sans liste d’étudiants', 'Data import screen, without a student list'),
     ],
   },
 ]

@@ -20,10 +20,20 @@ export interface ProjectDetails {
 
 export interface ProfessionalDetails {
   kind: 'professional'
-  context: Localized
   role: Localized
-  contributions: Localized<string[]>
-  learning?: Localized
+}
+
+export interface CompactDetails {
+  kind: 'compact'
+  goal: Localized
+  contribution: Localized
+}
+
+export interface IntermediateDetails {
+  kind: 'intermediate'
+  goal: Localized
+  contribution: Localized
+  technicalPoints: Localized
 }
 
 export interface NotableContribution {
@@ -33,13 +43,13 @@ export interface NotableContribution {
   solution: Localized
   result?: Localized
   image?: ProjectImage
+  visual?: 'abstract'
   technologies?: Localized<string[]>
 }
 
 export interface OtherContribution {
   title: Localized
   description: Localized
-  technologies?: string[]
 }
 
 export type ProjectGroup = 'professional' | 'selected' | 'experiments'
@@ -53,6 +63,7 @@ export interface Project {
   id: string
   title: Localized
   description: Localized
+  modalIntro?: Localized
   type: Localized
   group: ProjectGroup
   company?: string
@@ -63,7 +74,7 @@ export interface Project {
   codeVisibility: 'public' | 'private' | 'unpublished'
   github?: string
   demo?: string
-  details: ProjectDetails | ProfessionalDetails
+  details: ProjectDetails | ProfessionalDetails | CompactDetails | IntermediateDetails
   notableContributions?: NotableContribution[]
   otherContributions?: OtherContribution[]
   gallery: ProjectImage[]

@@ -43,19 +43,25 @@ export function ProjectModal({ project, language, copy, onClose }: ProjectModalP
   ] as const
 
   const details = project.details
-  const detailSections: { label: string; body: string | string[] }[] = details.kind === 'professional'
-    ? [
-      { label: copy.modalSections.context, body: localize(details.context, language) },
-      { label: copy.modalSections.role, body: localize(details.role, language) },
-      { label: copy.modalSections.contributions, body: localize(details.contributions, language) },
-      ...(details.learning ? [{ label: copy.modalSections.learning, body: localize(details.learning, language) }] : []),
-    ]
-    : technicalSections.map(([key, label]) => ({ label, body: localize(details[key], language) }))
+  const detailSections: { label: string; body: string }[] = details.kind === 'professional'
+    ? [{ label: copy.modalSections.role, body: localize(details.role, language) }]
+    : details.kind === 'compact'
+      ? [
+        { label: copy.modalSections.goal, body: localize(details.goal, language) },
+        { label: copy.modalSections.personalContribution, body: localize(details.contribution, language) },
+      ]
+      : details.kind === 'intermediate'
+        ? [
+          { label: copy.modalSections.goal, body: localize(details.goal, language) },
+          { label: copy.modalSections.personalContribution, body: localize(details.contribution, language) },
+          { label: copy.modalSections.technicalPoints, body: localize(details.technicalPoints, language) },
+        ]
+        : technicalSections.map(([key, label]) => ({ label, body: localize(details[key], language) }))
 
   return (
     <dialog
       ref={dialogRef}
-      className="project-modal"
+      className={`project-modal${details.kind === 'compact' || details.kind === 'intermediate' ? ' project-modal--compact' : ''}${project.id === 'smart-watering-system' ? ' project-modal--planty' : ''}`}
       aria-labelledby="project-modal-title"
       onCancel={(event) => { event.preventDefault(); onClose() }}
       onClose={onClose}
@@ -83,7 +89,7 @@ export function ProjectModal({ project, language, copy, onClose }: ProjectModalP
           <h2 id="project-modal-title">{localize(project.title, language)}</h2>
           {project.company && <p className="project-modal__company">{project.company}</p>}
           {project.context && <p className="project-card__context">{localize(project.context, language)}</p>}
-          <p>{localize(project.description, language)}</p>
+          <p>{localize(project.modalIntro ?? project.description, language)}</p>
           <div className="project-modal__links"><ProjectLinks project={project} copy={copy} language={language} /></div>
         </header>
 
@@ -91,7 +97,7 @@ export function ProjectModal({ project, language, copy, onClose }: ProjectModalP
           {detailSections.map(({ label, body }) => (
             <section key={label}>
               <h3>{label}</h3>
-              {Array.isArray(body) ? <ul className="project-modal__list">{body.map(item => <li key={item}>{item}</li>)}</ul> : <p>{body}</p>}
+              <p>{body}</p>
             </section>
           ))}
           <section>
@@ -106,17 +112,25 @@ export function ProjectModal({ project, language, copy, onClose }: ProjectModalP
           <section className="project-contribution" key={contribution.title.en}>
             <p className="eyebrow">{copy.modalSections.notableContribution}</p>
             <h3>{localize(contribution.title, language)}</h3>
-            <div className={`project-contribution__layout${contribution.image ? '' : ' project-contribution__layout--text'}`}>
+            <div className={`project-contribution__layout${contribution.image || contribution.visual ? '' : ' project-contribution__layout--text'}`}>
               <dl>
                 {(['problem', 'role', 'solution', 'result'] as const).map(key => {
                   const text = contribution[key]
-                  return text ? <div key={key}><dt>{copy.modalSections[key]}</dt><dd>{localize(text, language)}</dd></div> : null
+                  return text ? <div key={key}><dt>{key === 'role' ? copy.modalSections.work : copy.modalSections[key]}</dt><dd>{localize(text, language)}</dd></div> : null
                 })}
               </dl>
               {contribution.image && <figure><ProjectScreenshot image={contribution.image} language={language} /><figcaption>{localize(contribution.image.alt, language)}</figcaption></figure>}
+              {contribution.visual === 'abstract' && <figure className="project-contribution__abstract">
+                <div className="project-contribution__abstract-art" aria-hidden="true">
+                  <span>{localize(project.type, language)}</span>
+                  <strong>{project.visual?.kind === 'editorial' ? project.visual.wordmark : localize(project.title, language)}</strong>
+                  {project.visual?.kind === 'editorial' && <div>{localize(project.visual.terms, language).map(term => <span key={term}>{term}</span>)}</div>}
+                </div>
+                <figcaption>{copy.abstractVisual}</figcaption>
+              </figure>}
             </div>
             {contribution.technologies && <ul className="tag-list" aria-label={copy.modalSections.stack}>
-              {localize(contribution.technologies, language).map(technology => <li key={technology}>{technology}</li>)}
+              {localize(contribution.technologies, language).filter(technology => !project.technologies.includes(technology)).map(technology => <li key={technology}>{technology}</li>)}
             </ul>}
           </section>
         ))}
@@ -126,9 +140,6 @@ export function ProjectModal({ project, language, copy, onClose }: ProjectModalP
           {project.otherContributions.map(contribution => <section key={contribution.title.en}>
             <h4>{localize(contribution.title, language)}</h4>
             <p>{localize(contribution.description, language)}</p>
-            {contribution.technologies && <ul className="tag-list" aria-label={copy.modalSections.stack}>
-              {contribution.technologies.map(technology => <li key={technology}>{technology}</li>)}
-            </ul>}
           </section>)}
         </section>}
 

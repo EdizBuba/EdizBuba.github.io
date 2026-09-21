@@ -54,14 +54,15 @@ export interface Copy {
     modalSections: {
       problem: string
       role: string
+      goal: string
+      personalContribution: string
+      technicalPoints: string
+      work: string
       solution: string
       challenges: string
       result: string
       stack: string
       gallery: string
-      context: string
-      contributions: string
-      learning: string
       notableContribution: string
       otherContributions: string
     }

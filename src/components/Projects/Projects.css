@@ -61,7 +61,11 @@
 .project-modal .project-modal__header > p { color: var(--color-muted); }
 .project-modal .project-modal__header .project-modal__company { margin-bottom: 0.3rem; color: var(--color-text); font-weight: 650; }
 .project-modal .project-modal__links { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 1.5rem; }
-.project-modal .project-modal__list { padding-left: 1.15rem; display: grid; gap: 0.6rem; color: var(--color-muted); }
+.project-modal--compact .project-modal__panel { padding: clamp(1.75rem, 4vw, 3rem); }
+.project-modal--compact .project-modal__header { margin-bottom: 1.5rem; }
+.project-modal--compact .project-modal__header h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.project-modal--compact .project-modal__details section { padding-top: 1rem; padding-bottom: 1rem; }
+.project-modal--compact .project-modal__gallery { margin-top: 1.5rem; }
 .project-modal .project-modal__gallery > div { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
 .project-modal .project-modal__gallery figure { min-width: 0; margin: 0; }
 .project-modal .project-modal__gallery img { height: auto; max-height: 440px; min-height: 0; object-fit: contain; }
@@ -74,11 +78,17 @@
 .project-modal .project-contribution dt { margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
 .project-modal .project-contribution dd { margin: 0 0 1.5rem; color: var(--color-muted); }
 .project-modal .project-contribution img { width: 100%; height: auto; border: 1px solid var(--color-line); }
+.project-modal .project-contribution__abstract-art { display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; min-height: 260px; padding: 1.5rem; border: 1px solid var(--color-line-strong); background-color: var(--color-bg); background-image: linear-gradient(var(--color-line) 1px, transparent 1px), linear-gradient(90deg, var(--color-line) 1px, transparent 1px); background-size: 25% 25%; }
+.project-modal .project-contribution__abstract-art > span { color: var(--color-muted); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.project-modal .project-contribution__abstract-art strong { color: var(--color-text); font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; letter-spacing: -0.06em; line-height: 1; }
+.project-modal .project-contribution__abstract-art > div { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; color: var(--color-accent); font-family: var(--font-mono); font-size: 0.72rem; }
 .project-modal .project-contribution__layout--text { grid-template-columns: minmax(0, 1fr); }
 .project-modal .project-other-contributions { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-line); }
 .project-modal .project-other-contributions > section { padding: 1.25rem 0; border-bottom: 1px solid var(--color-line); }
 .project-modal .project-other-contributions h4 { margin: 0 0 0.75rem; font-size: 1.1rem; font-weight: 600; }
 .project-modal .project-other-contributions p { margin: 0 0 1rem; color: var(--color-muted); }
+.project-modal--compact .project-modal__gallery img { max-height: 240px; min-height: 0; }
+.project-modal--planty .project-modal__gallery .project-gallery__landscape img { max-height: 360px; }
 
 @media (max-width: 900px) {
   .projects .project-card:nth-child(even) { grid-template-columns: 1fr; }
@@ -102,6 +112,7 @@
   .projects .project-visual__screens { inset: 8% 4% 19%; }
   .projects .project-visual__single { inset: 5% 5% 19%; }
   .project-modal .project-modal__panel { padding: 1.25rem; }
+  .project-modal--compact .project-modal__panel { padding: 1.25rem; }
   .project-modal .project-modal__header h2 { padding-right: 2.25rem; }
   .project-modal .project-modal__gallery > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
   .project-modal .project-contribution__layout { grid-template-columns: 1fr; }
