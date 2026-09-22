@@ -32,7 +32,7 @@ export const projects: Project[] = [
       fr: 'Sur IKOS, je développe et maintiens des fonctionnalités d’un progiciel de gestion immobilière.',
       en: 'On IKOS, I develop and maintain features in a real estate management software product.',
     },
-    technologies: ['Java', 'JSF / PrimeFaces', 'JSP', 'Struts', 'DB2 / SQL', 'Git'],
+    technologies: ['Java', 'JavaScript', 'JSF / PrimeFaces', 'JSP', 'Struts', 'DB2 / SQL', 'Git'],
     codeVisibility: 'private',
     visual: {
       kind: 'editorial', wordmark: 'IKOS',

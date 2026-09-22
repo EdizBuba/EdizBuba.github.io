@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
         'Analyzing business and technical requirements, working with SQL data, and testing and validating changes.',
       ],
     },
-    technologies: ['Java', 'SQL', 'Git'],
+    technologies: ['Java', 'JavaScript', 'SQL', 'Git'],
   },
   {
     company: 'OKTEO · Micgest',
