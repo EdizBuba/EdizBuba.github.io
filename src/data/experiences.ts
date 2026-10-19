@@ -22,19 +22,19 @@ export const experiences: Experience[] = [
   },
   {
     company: 'OKTEO · Micgest',
-    role: { fr: 'Développeur logiciels — Alternance', en: 'Software Developer — Apprenticeship' },
+    role: { fr: 'Développeur logiciel — Alternance', en: 'Software Developer — Apprenticeship' },
     period: { fr: '2024 — 2025', en: '2024 — 2025' },
     location: { fr: 'Arbent, France · sur site', en: 'Arbent, France · on-site' },
     responsibilities: {
       fr: [
         'Développement et évolution de fonctionnalités pour l’ERP Micgest pendant mon BUT Informatique.',
         'Correction d’anomalies et travail sur les données avec SQL et HFSQL.',
-        'Conception d’un outil de recherche avancée, de l’analyse du besoin jusqu’aux tests et à la validation.',
+        'Conception de l’outil de recherche des paramètres ERP, de l’analyse du besoin jusqu’aux tests et à la validation.',
       ],
       en: [
         'Developed and enhanced features for the Micgest ERP alongside my BUT Informatique studies.',
         'Investigated software issues and worked with SQL and HFSQL data.',
-        'Designed an advanced search tool, from requirements analysis through implementation, testing and validation.',
+        'Designed the ERP settings search tool, from requirements analysis through implementation, testing and validation.',
       ],
     },
     technologies: ['WinDev', 'HFSQL', 'SQL', 'JSON'],
