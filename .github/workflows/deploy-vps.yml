@@ -1,0 +1,80 @@
+name: Deploy portfolio to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-vps
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Check build output
+        run: |
+          set -euo pipefail
+          for f in index.html robots.txt sitemap.xml favicon.ico docs/CV-Ediz-Buba-FR.pdf docs/CV-Ediz-Buba-EN.pdf; do
+            test -f "dist/$f"
+          done
+          ls dist/assets/*.js >/dev/null
+
+      - name: Deploy through restricted SSH account
+        env:
+          DEPLOY_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
+          DEPLOY_PASSPHRASE: ${{ secrets.PORTFOLIO_SSH_PASSPHRASE }}
+          KNOWN_HOSTS: ${{ secrets.PORTFOLIO_SSH_KNOWN_HOSTS }}
+          DEPLOY_HOST: ${{ secrets.PORTFOLIO_SSH_HOST }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_KEY" && test -n "$DEPLOY_PASSPHRASE" && test -n "$KNOWN_HOSTS" && test -n "$DEPLOY_HOST"
+          latest=$(git ls-remote origin refs/heads/main | cut -f1)
+          if [[ "$latest" != "$GITHUB_SHA" ]]; then
+            echo 'A newer commit is on main; skipping this older deployment.'
+            exit 0
+          fi
+          umask 077
+          mkdir -p "$RUNNER_TEMP/portfolio-ssh"
+          key="$RUNNER_TEMP/portfolio-ssh/key"
+          printf '%s\n' "$DEPLOY_KEY" > "$key"
+          printf '%s\n' "$KNOWN_HOSTS" > "$RUNNER_TEMP/portfolio-ssh/known_hosts"
+          # The key remains encrypted on disk; its passphrase is supplied to the agent.
+          printf '#!/bin/sh\nprintf "%%s\\n" "$DEPLOY_PASSPHRASE"\n' > "$RUNNER_TEMP/portfolio-ssh/askpass"
+          chmod 700 "$RUNNER_TEMP/portfolio-ssh/askpass"
+          eval "$(ssh-agent -s)"
+          trap 'ssh-agent -k >/dev/null; rm -rf -- "$RUNNER_TEMP/portfolio-ssh"' EXIT
+          DISPLAY=:0 SSH_ASKPASS_REQUIRE=force SSH_ASKPASS="$RUNNER_TEMP/portfolio-ssh/askpass" ssh-add "$key" </dev/null
+          # The forced command reads the SHA line, then the tarball of dist/.
+          { printf '%s\n' "$GITHUB_SHA"; tar -czf - -C dist .; } \
+            | ssh -T -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$RUNNER_TEMP/portfolio-ssh/known_hosts" -o IdentitiesOnly=yes -i "$key" "portfolio-deploy@$DEPLOY_HOST"
+
+      - name: Smoke test
+        env:
+          DEPLOY_HOST: ${{ secrets.PORTFOLIO_SSH_HOST }}
+        run: |
+          set -euo pipefail
+          # Query the VPS directly so the check does not depend on DNS.
+          curl --fail --silent --show-error --retry 3 --resolve "ediz-buba.com:443:$DEPLOY_HOST" -o /dev/null https://ediz-buba.com/ \
+            || curl --fail --silent --show-error --retry 3 -H 'Host: ediz-buba.com' -o /dev/null "http://$DEPLOY_HOST/"
